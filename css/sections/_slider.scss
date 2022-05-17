@@ -1,0 +1,109 @@
+.hero {
+	padding-bottom: 45px;
+	&__slide.slick-slide {
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		min-height: 500px;
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.65);
+			pointer-events: none;
+			z-index: 1;
+		}
+	}
+	&__content { //always center
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		pointer-events: none;
+		padding: 30px;
+		margin-top: -30px; //get text little higher
+		z-index: 2;
+		pointer-events: none;
+	}
+	&__slogan {
+		font-weight: 600;
+		font-size: 30px;
+		line-height: 1.2;
+		color: #fff;
+	}
+	&__readmore {
+		margin-top: 60px;
+		pointer-events: all;
+	}
+	@media screen and (min-width: 992px) {
+		padding-bottom: 110px;
+		&__slide.slick-slide {
+			min-height: 730px;
+		}
+		&__slogan {
+			font-size: 48px;
+		}
+	}
+}
+
+.slick-slider {
+	display: block;
+	.slick-dots {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 20px;
+		li {
+			margin: 5px;
+			button {
+				font-size: 0;
+				line-height: 0;
+				display: block;
+				width: 15px;
+				height: 15px;
+				padding: 5px;
+				cursor: pointer;
+				color: transparent;
+				border: none;
+				outline: none;
+				background: #E8E8E8;
+				border-radius: 50%;
+				margin: 5px;
+				transition: background ease-in-out .3s, opacity ease-in-out .3s;
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+			&.slick-active button {
+				width: 20px;
+				height: 20px;
+				background: $style;
+				margin: 0;
+			}
+		}
+		@media screen and (min-width: 992px) {
+			bottom: 42px;
+			li {
+				margin: 11px;
+				button {
+					width: 20px;
+					height: 20px;
+				}
+				&.slick-active button {
+					width: 25px;
+					height: 25px;
+				}
+			}
+		}
+	}
+}

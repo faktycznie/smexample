@@ -1,0 +1,33 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	font: inherit;
+	font-size: 16px;
+	color: #000;
+	padding: 15px 12px 19px;
+	line-height: 20px;
+	background: #E8E8E8;
+	border: 1px solid transparent;
+
+	&:focus {
+		outline: 0; //not good for accessibility :)
+	}
+
+	@include placeholder {
+		color: #000;
+		opacity: 1;
+	}
+}

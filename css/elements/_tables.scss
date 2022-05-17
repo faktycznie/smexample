@@ -1,0 +1,40 @@
+.table {
+	margin: 0 0 1.5em;
+	width: 100%;
+	border-collapse: collapse;
+	&__row {
+		border-bottom: 1px solid #CECECE;
+	}
+	&__head {
+		padding: 10px;
+		font-size: 14px;
+		line-height: 17px;
+		text-align: center;
+	}
+	&__cell {
+		padding: 10px;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 24px;
+		text-align: center;
+	}
+	@media screen and (min-width: 992px) {
+		&__cell {
+			font-size: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.table-responsive {
+		overflow-x: auto;
+		position: relative;
+		&:before,
+		&:after {
+			content: '\2194';
+			display: block;
+			margin: 5px 0;
+			opacity: 0.8;
+		}
+	}
+}

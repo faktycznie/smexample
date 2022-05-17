@@ -1,0 +1,124 @@
+.contact {
+	padding: 0 0 100px;
+	&__title {
+		font-size: 30px;
+		line-height: 40px;
+		text-align: center;
+		margin: 0 0 45px;
+	}
+	@media screen and (min-width: 992px) {
+		&__title {
+			font-size: 48px;
+			line-height: 59px;
+			margin: 0 0 70px;
+		}
+	}
+}
+
+.contact-form {
+	padding: 42px 0 0;
+	.message + & {
+		padding: 0;
+	}
+	&__consent {
+		display: none;
+		font-size: 12px;
+		line-height: 15px;
+		margin: 20px 0;
+		&--active {
+			display: block;
+		}
+	}
+	&__input,
+	&__textarea {
+		width: 100%;
+	}
+	&__textarea {
+		height: 180px;
+	}
+	&__row {
+		line-height: 1;
+		margin: 0 0 12px;
+	}
+
+	//validation
+	&__row,
+	&__checkbox {
+		position: relative;
+		label.error {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			font-size: 8px;
+			line-height: 10px;
+			color: $style;
+		}
+	}
+	&__input.error,
+	&__textarea.error,
+	.checkbox__input.error + label + .checkbox__mark:before {
+		border-color: $style;
+	}
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	&__label {
+		cursor: pointer;
+		font-size: 12px;
+		line-height: 15px;
+	}
+	&__mark {
+		cursor: pointer;
+		position: relative;
+		&:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			width: 28px;
+			height: 28px;
+			background: #E8E8E8;
+			border: 1px solid transparent;
+			margin-right: 13px;
+		}
+	}
+	&__input {
+		visibility: hidden;
+		width: 0;
+		&:checked {
+			+ .checkbox__mark,
+			+ label + .checkbox__mark { //ugly
+				&:after {
+					position: absolute;
+					top: 6px;
+					left: 6px;
+					content: '';
+					display: block;
+					width: 16px;
+					height: 16px;
+					background: $style;
+				}
+			}
+		}
+	}
+	&__more {
+		text-transform: uppercase;
+		color: $style;
+		&:hover {
+			color: #000;
+		}
+	}
+}
+
+.person {
+	&__title {
+		margin: 0 0 18px;
+	}
+	&__email {
+		margin: 18px 0 45px;
+	}
+	@media only screen and (max-width: 991px) {
+		text-align: center;
+	}
+}

@@ -1,0 +1,218 @@
+.reports {
+	padding-bottom: 65px;
+	&__title {
+		font-size: 30px;
+		line-height: 40px;
+		text-align: center;
+		margin: 0 0 45px;
+	}
+	&__items-inner {
+		text-align: center;
+	}
+	&__list {
+		list-style: none;
+		margin: 0 0 95px;
+		padding: 0;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		background: #FFFFFF;
+		box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+	}
+	&__link {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		padding: 30px;
+		position: relative;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			transition: all ease-in-out .3s;
+		}
+	}
+	&__item {
+		flex: 1 1 0; //equal size of elements
+		width: 100%;
+		&--active {
+			.reports__link {
+				color: #DDDEDD;
+				&:before {
+					top: 0;
+					bottom: 0;
+					background: $style;
+				}
+			}
+		}
+	}
+	&__icon,
+	&__name {
+		position: relative;
+	}
+
+	&__icon {
+		margin: 0 0 26px;
+	}
+	&__name {
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 24px;
+	}
+	&__content {
+		background: #FFFFFF;
+		box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+		padding: 25px 25px 50px;
+		transition: opacity ease 0.3s;
+		&--empty {
+			box-shadow: none;
+			padding: 20px;
+			background-image: url('../img/ajax-loader.gif');
+			background-repeat: no-repeat;
+			background-position: center;
+			opacity: 0.5;
+		}
+	}
+	@media screen and (min-width: 1366px) {
+		&__link {
+			min-width: 243px;
+			min-height: 213px;
+		}
+	}
+	@media screen and (min-width: 992px) {
+		&__title {
+			font-size: 48px;
+			line-height: 59px;
+			margin: 0 0 83px;
+		}
+		&__list {
+			flex-direction: row;
+		}
+		&__item {
+			+ .reports__item {
+				position: relative;
+				&:before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 0;
+					width: 5px;
+					height: 122px;
+					background: #D8D8D8;
+					pointer-events: none;
+				}
+			}
+			&--active {
+				.reports__link {
+					&:before {
+						top: -33px;
+						bottom: -33px;
+					}
+				}
+				+ .reports__item {
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+		&__content {
+			padding: 25px 90px 100px;
+		}
+	}
+}
+
+
+.report {
+	&__title {
+		font-weight: bold;
+		font-size: 28px;
+		line-height: 34px;
+		margin: 0 0 22px;
+	}
+	&__chart {
+		width: 100%;
+		max-width: 770px;
+		height: 438px;
+		margin: 0 auto;
+	}
+	.table,
+	.table-footer {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	.table-footer {
+		font-size: 14px;
+		line-height: 17px;
+		margin-top: 15px;
+	}
+}
+
+.latest-reports {
+	list-style: none;
+	margin: 0 -20px;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	&__item {
+		margin: 20px;
+		&--more {
+			margin-left: 10px;
+			align-self: flex-end;
+		}
+	}
+	&__link {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		position: relative;
+		padding: 62px 23px 54px;
+		border: 2px solid $style;
+		min-height: 400px;
+	}
+	&__subname {
+		color: #fff;
+		background: $style;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 24px;
+		padding: 8px 20px;
+		position: absolute;
+		top: 28px;
+		left: -36px;
+	}
+	&__file {
+		margin: 45px 0 40px;
+		&.file--pdf {
+			@include file-icon('pdf', 73, 76);
+		}
+	}
+	&__title {
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 24px;
+		margin: 0 0 10px;
+	}
+	@media screen and (min-width: 1366px) {
+		flex-wrap: nowrap;
+		margin: 0 -45px;
+		&__item {
+			margin: 20px 45px;
+		}
+	}
+	@media screen and (min-width: 992px) {
+		flex-direction: row;
+		justify-content: normal;
+	}
+}
+
